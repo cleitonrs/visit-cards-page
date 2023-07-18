@@ -3,6 +3,7 @@ import card2 from './assets/2.jpg'
 import card3 from './assets/3.jpg'
 import card4 from './assets/4.jpg'
 import card5 from './assets/5.jpg'
+import card6 from './assets/6.jpg'
 
 export function Cards() {
   return (
@@ -12,7 +13,8 @@ export function Cards() {
       <img className='w-80 rounded-lg mb-10' src={card3} alt="" />
       <img className='w-80 rounded-lg mb-10' src={card4} alt="" />
       <img className='w-80 rounded-lg mb-10' src={card5} alt="" />
-
+      <img className='w-80 rounded-lg mb-10' src={card6} alt="" />
+      
     </div>
   )
 }
