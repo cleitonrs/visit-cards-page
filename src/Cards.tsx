@@ -1,21 +1,30 @@
-import card1 from './assets/1.png'
-import card2 from './assets/2.jpg'
-import card3 from './assets/3.jpg'
-import card4 from './assets/4.jpg'
-import card5 from './assets/5.jpg'
-import card6 from './assets/6.jpg'
+import { useEffect, useState } from 'react'
+import * as VCards from './services/visitCards'
+import { VisitCards } from './types/VisitCards'
 
 export function Cards() {
+  const [loading, setLoading] = useState(false)
+  const [visitCards, setVisitCards] = useState<VisitCards[]>([])
+
+  useEffect(() => {
+    const getVisitCards = async () => {
+      setLoading(true)
+      setVisitCards(await VCards.getAll())
+      setLoading(false)
+    }
+    void getVisitCards()
+  }, [])
+
   return (
-    <div className="flex flex-col justify-start items-center m-10 opacity-100">
-      <img className='w-80 rounded-lg mb-10' src={card1} alt="" />
-      <img className='w-80 rounded-lg mb-10' src={card2} alt="" />
-      <img className='w-80 rounded-lg mb-10' src={card3} alt="" />
-      <img className='w-80 rounded-lg mb-10' src={card4} alt="" />
-      <img className='w-80 rounded-lg mb-10' src={card5} alt="" />
-      <img className='w-80 rounded-lg mb-10' src={card6} alt="" />
-      
+    <div className='flex flex-col justify-start items-center m-10'>
+      {loading && 
+        <div className='text-4xl m-10'>
+          Carregando... <span className='text-6xl'>✋</span>
+        </div>
+      }
+      {!loading && visitCards.map((item) => (
+        <img key={item.url} className='w-80 rounded-lg mb-10' src={item.url} alt={item.name} />
+      ))}
     </div>
   )
 }
-
