@@ -18,8 +18,11 @@ export function Cards() {
   return (
     <div className='flex flex-col justify-start items-center m-10'>
       {loading && 
-        <div className='text-4xl m-10'>
-          Carregando... <span className='text-6xl'>✋</span>
+        <div>
+          <div className='text-6xl text-center m-10'>✋</div>
+          <div className='text-4xl'>
+            Carregando... 
+          </div>
         </div>
       }
       {!loading && visitCards.map((item) => (
