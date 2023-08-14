@@ -35,7 +35,7 @@ export function Cards() {
       </div>
       {loading ? 
         (<div className='flex flex-col justify-center items-center'>
-          <div className='mt-10 mb-5 relative w-20 h-20 rounded-full before:content-[""] before:absolute before:rounded-[inherit] before:w-full before:h-full before:bg-gradient-to-r before:from-fuchsia-500 before:to-cyan-500 animate-spinSlow after:content-[""] after:absolute after:rounded-[inherit] after:w-[85%] after:h-[85%] after:bg-zinc-900 after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2'>     
+          <div className='mt-10 mb-5 relative w-20 h-20 rounded-full before:content-[""] before:absolute before:rounded-[inherit] before:w-full before:h-full before:bg-gradient-to-r before:from-fuchsia-500 before:to-cyan-500 animate-spinSlow after:content-[""] after:absolute after:rounded-[inherit] after:w-[85%] after:h-[85%] after:bg-zinc-900 after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 z-50'>     
           </div>
           <span className='text-2xl'>Carregando...</span>
         </div>) : null
