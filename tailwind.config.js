@@ -1,3 +1,5 @@
+import { transform } from 'typescript'
+
 /** @type {import('tailwindcss').Config} **/
 export default {
   content: [
@@ -7,7 +9,16 @@ export default {
     fontFamily: {
       'sans': ['Inter']
     },
-    extend: {},
+    extend: {
+      animation: {
+        'spinSlow': 'spin .5s linear infinite'
+      },
+      keyframes: {
+        spinSlow: {
+          '0%, 100%': { transform: 'rotate(360deg)'},
+        },
+      },
+    },
   },
   plugins: [],
 }
