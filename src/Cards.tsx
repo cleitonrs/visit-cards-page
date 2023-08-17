@@ -30,7 +30,7 @@ export function Cards() {
           onChange={(e) => setSearch(e.target.value)}
           type='text'
           placeholder='Pesquise aqui'
-          className='text-zinc-500 p-1 mb-4 rounded-sm bg-zinc-100 z-50 w-[80%]'
+          className='text-zinc-500 p-1 mb-4 rounded-sm bg-zinc-100 z-50 w-[80%] outline-none outline-offset-0 focus:outline-cyan-500'
         />
       </div>
       {loading ? 
